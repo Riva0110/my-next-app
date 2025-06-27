@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useOptimistic } from "react";
+import { useActionState } from "react";
 import {
   addTodo,
   getTodos,
@@ -8,8 +8,9 @@ import {
   editTodoName,
   deleteTodo,
 } from "./actions";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useOptimistic } from "react";
 import Toast from "../components/Toast"; // Import the Toast component
+import SubmitButton from "../components/SubmitButton"; // Import SubmitButton
 
 interface Todo {
   _id: string;
@@ -19,9 +20,7 @@ interface Todo {
 }
 
 export default function HomePage() {
-  const [state, formAction, isPending] = useActionState(addTodo, {
-    message: "",
-  });
+  const [state, formAction] = useActionState(addTodo, { message: "" });
   const [todos, setTodos] = useState<Todo[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState<string>("");
@@ -98,9 +97,7 @@ export default function HomePage() {
 
       <form action={handleFormAction}>
         <input type="text" name="name" placeholder="Add a new todo" />
-        <button type="submit" disabled={isPending}>
-          {isPending ? "Adding..." : "Add Todo"}
-        </button>
+        <SubmitButton />
       </form>
 
       <ul>
@@ -115,7 +112,7 @@ export default function HomePage() {
                   className="edit-input"
                 />
                 <button onClick={() => handleSaveEdit(todo._id)}>Save</button>
-                <button onClick={handleCancelEdit}>Cancel</button>
+                <button onClick={() => handleCancelEdit()}>Cancel</button>
               </>
             ) : (
               <>
