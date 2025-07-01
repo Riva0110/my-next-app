@@ -76,6 +76,17 @@ p {
   margin-top: 10px;
 }
 
+.tooltip-content p {
+  color: #333; /* Override to a darker color */
+  text-align: left; /* Align text left within tooltip */
+  margin-top: 5px; /* Adjust margin for paragraphs within tooltip */
+}
+
+.tooltip-content h4 {
+  color: #2c3e50; /* Ensure heading color is consistent */
+  margin-bottom: 10px;
+}
+
 ul {
   list-style: none;
   padding: 0;
