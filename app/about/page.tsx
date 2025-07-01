@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, use, useMemo } from "react";
+import { Suspense, use } from "react";
 import Tooltip from "../../components/Tooltip";
 import { ThemeContext } from "../../components/ThemeContext"; // Corrected import for ThemeContext
 import AboutPageNotes from "@/components/notes/AboutPageNotes";
@@ -9,22 +9,34 @@ import AboutPageNotes from "@/components/notes/AboutPageNotes";
 async function fetchDataInternal() {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve("Data fetched using React 19 use hook in Client Component!");
+      resolve("I'm data. I'm data.");
     }, 2000); // Simulate 2-second delay
   });
 }
 
 function AboutContent() {
   // Use useMemo to create a stable promise for the use hook
-  const dataPromise = useMemo(() => fetchDataInternal(), []);
+  const dataPromise = fetchDataInternal();
   const data = use(dataPromise);
 
+  return (
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <p>{data}</p>
+    </div>
+  );
+}
+
+export default function AboutPage() {
   // Use the `use` hook to consume ThemeContext
   const theme = use(ThemeContext);
 
   return (
-    <div>
-      <p>{data}</p>
+    <main>
+      <h2>use</h2>
       <button
         style={{
           backgroundColor: theme.buttonColor,
@@ -37,15 +49,18 @@ function AboutContent() {
       >
         Purple Button
       </button>
-    </div>
-  );
-}
-
-export default function AboutPage() {
-  return (
-    <main>
-      <h2>use</h2>
-      <Suspense fallback={<div>Loading about data...</div>}>
+      <br />
+      <br />
+      button&apos;s color is from ThemeContext: {theme.buttonColor}
+      <br />
+      <br />
+      ------
+      <br />
+      <strong>
+        below's data is fetched using the <code>use</code> hook in a Client
+        Component.
+      </strong>
+      <Suspense fallback={<p>Loading about data...</p>}>
         <AboutContent />
       </Suspense>
       <Tooltip>
