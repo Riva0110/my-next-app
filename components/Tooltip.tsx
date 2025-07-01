@@ -45,7 +45,7 @@ export default function Tooltip({ children }: TooltipProps) {
             padding: "15px",
             marginTop: "10px",
             width: "1500px",
-            maxHeight: "800px" /* Add a max-height */,
+            height: "100vh",
             overflowY: "auto" /* Enable vertical scrolling */,
             boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
           }}

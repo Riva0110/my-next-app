@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CounterButton from "../../components/CounterButton"; // Import the new CounterButton component
+import CompilerPageNotes from "@/components/notes/CompilerPageNotes";
+import Tooltip from "@/components/Tooltip";
 
 // CounterList.tsx
 export default function CounterList() {
@@ -37,6 +39,9 @@ export default function CounterList() {
             <CounterButton key={index} />
           ))}
       </div>
+      <Tooltip>
+        <CompilerPageNotes />
+      </Tooltip>
     </div>
   );
 }
