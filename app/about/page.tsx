@@ -24,7 +24,6 @@ function AboutContent() {
 
   return (
     <div>
-      <h3>About Page Content</h3>
       <p>{data}</p>
       <button
         style={{
@@ -45,7 +44,7 @@ function AboutContent() {
 export default function AboutPage() {
   return (
     <main>
-      <h2>關於</h2>
+      <h2>use</h2>
       <Suspense fallback={<div>Loading about data...</div>}>
         <AboutContent />
       </Suspense>

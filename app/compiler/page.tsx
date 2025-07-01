@@ -13,6 +13,18 @@ export default function CounterList() {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
+      <a
+        href="https://playground.react.dev/#N4Igzg9grgTgxgUxALhAgHgBwjALgAgBMEAzAQygBsCSoA7OXASwjvwFkBPAQU0wAoAlPmAAdNvhgJcsNgB5CTAG4A+ABIJKlCPgDqOSoTkB6RaoDc4gL7iQVoA"
+        target="_blank"
+        style={{
+          fontSize: "24px",
+          marginBottom: "20px",
+          textDecoration: "none",
+          color: "blue",
+        }}
+      >
+        playground
+      </a>
       <button
         style={{
           width: "160px",

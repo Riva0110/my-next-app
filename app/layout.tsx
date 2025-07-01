@@ -37,13 +37,13 @@ export default function RootLayout({
                   color: pathname === "/about" ? "#007bff" : "#333",
                 }}
               >
-                use
+                use API
               </Link>
               <Link
                 href="/contact"
                 style={{ color: pathname === "/contact" ? "#007bff" : "#333" }}
               >
-                others
+                improvements
               </Link>
               <Link
                 href="/compiler"
