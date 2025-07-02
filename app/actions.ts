@@ -28,9 +28,10 @@ export async function addTodo(
   try {
     await Todo.create({ name });
     revalidatePath("/"); // Revalidate the home page to show new todo
-    await new Promise((resolve) => {
+    await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve("Optimistic update complete");
+        // reject("Optimistic update failed");
       }, 5000);
     });
     return { message: "Todo added successfully!" };
