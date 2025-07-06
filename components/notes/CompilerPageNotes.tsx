@@ -11,8 +11,10 @@ export default function CompilerPageNotes() {
           <p>
             <strong>React Compiler（RC）</strong> 是 React 團隊於 React 19
             引入的實驗性功能，目標是「
-            <strong>將 React 元件編譯為效能更高的程式碼</strong>」，自動處理{" "}
-            <em>memoization</em>（記憶化）、<em>re-render 優化</em>
+            <strong>
+              將 React 元件編譯為效能更高的程式碼
+            </strong>」，自動處理 <em>memoization</em>（記憶化）、
+            <em>re-render 優化</em>
             ，讓開發者專注於撰寫邏輯，而不需手動使用 <code>useMemo</code>、
             <code>memo</code> 等優化工具。
           </p>
@@ -20,7 +22,7 @@ export default function CompilerPageNotes() {
 
         <article>
           <h3>🚀 使用 RC 前後差異</h3>
-          <table border="1" cellpadding="6" cellspacing="0">
+          <table border={1} cellPadding={6} cellSpacing={0}>
             <thead>
               <tr>
                 <th>項目</th>
