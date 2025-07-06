@@ -57,7 +57,7 @@ export default function AboutPage() {
       ------
       <br />
       <strong>
-        below's data is fetched using the <code>use</code> hook in a Client
+        below&apos;s data is fetched using the <code>use</code> hook in a Client
         Component.
       </strong>
       <Suspense fallback={<p>Loading about data...</p>}>
