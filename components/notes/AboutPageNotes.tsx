@@ -71,7 +71,7 @@ export default function AboutPageNotes() {
         <h3>
           📊 <code>use()</code> vs <code>useContext()</code> 差異比較
         </h3>
-        <table border="1" cellpadding="6" cellspacing="0">
+        <table border={1} cellPadding={6} cellSpacing={0}>
           <thead>
             <tr>
               <th>功能比較</th>
