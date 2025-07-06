@@ -17,7 +17,7 @@ async function fetchDataInternal() {
 function AboutContent() {
   // Use useMemo to create a stable promise for the use hook
   const dataPromise = fetchDataInternal();
-  const data = use(dataPromise);
+  const data = use(dataPromise) as string;
 
   return (
     <div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <h2>use</h2>
       <button
         style={{
-          backgroundColor: theme.buttonColor,
+          backgroundColor: theme?.buttonColor,
           color: "white",
           padding: "10px 20px",
           border: "none",
@@ -51,7 +51,7 @@ export default function AboutPage() {
       </button>
       <br />
       <br />
-      button&apos;s color is from ThemeContext: {theme.buttonColor}
+      button&apos;s color is from ThemeContext: {theme?.buttonColor}
       <br />
       <br />
       ------
