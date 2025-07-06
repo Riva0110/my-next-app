@@ -7,6 +7,7 @@ import Tooltip from "@/components/Tooltip";
 
 // CounterList.tsx
 export default function CounterList() {
+  console.log("CounterList rendered");
   const [num, setNum] = useState(1000);
 
   return (

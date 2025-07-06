@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function CounterButton() {
+  console.log("CounterButton rendered");
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
